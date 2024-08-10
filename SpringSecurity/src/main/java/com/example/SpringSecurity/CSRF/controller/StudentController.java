@@ -1,5 +1,6 @@
-package com.example.SpringSecurity.CSRF;
+package com.example.SpringSecurity.CSRF.controller;
 
+import com.example.SpringSecurity.CSRF.model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;

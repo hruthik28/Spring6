@@ -1,4 +1,4 @@
-package com.example.SpringSecurity.CSRF;
+package com.example.SpringSecurity.CSRF.model;
 
 public class Student {
 
