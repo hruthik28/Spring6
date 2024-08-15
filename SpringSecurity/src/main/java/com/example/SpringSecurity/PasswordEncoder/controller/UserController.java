@@ -1,6 +1,7 @@
-package com.example.SpringSecurity.PasswordEncoder;
+package com.example.SpringSecurity.PasswordEncoder.controller;
 
 import com.example.SpringSecurity.CSRF.model.Users;
+import com.example.SpringSecurity.PasswordEncoder.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,5 +24,10 @@ public class UserController {
     public Users register (@RequestBody Users user){
         user.setPassword(encoder.encode(user.getPassword()));
         return userService.register(user);
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody Users user){
+        return userService.verify(user);
     }
 }
