@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8090:8080"
+    networks:
+      - student-network
+
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: dockerDB
+    ports:
+      - "5433:5432"
+    networks:
+      - student-network
+
+networks:
+  student-network:
+    driver: brigde
